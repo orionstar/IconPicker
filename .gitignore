@@ -1,0 +1,39 @@
+# Temporary / development files #
+#################################
+.env
+
+# Composer #
+############
+composer.lock
+vendor
+
+## WebPack / Laravel Mix #
+##########################
+node_modules
+package-lock.json
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE Files #
+#############
+/nbproject/
+.idea/*
+
+## Sublime Text cache files #
+#############################
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+*.sublime-project
+*.tasks
+/tests/tests/
+/tests/results/
