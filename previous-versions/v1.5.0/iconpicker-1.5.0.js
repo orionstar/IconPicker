@@ -10,14 +10,13 @@
 
 // IconPicker: Default Options on
 var ipDefaultOptions = {
-    jsonIconList: null,
     jsonUrl: null,
     searchPlaceholder: 'Search Icon',
     showAllButton: 'Show All',
     cancelButton: 'Cancel',
     noResultsFound: 'No results found.',
     borderRadius: '20px',
-};
+}
 var ipNewOptions;
 var ipGithubUrl = 'https://github.com/furcan/IconPicker';
 // IconPicker: Default Options off
@@ -86,7 +85,6 @@ var IconPicker = {
                     // IconPicker: Button Listeners -> Send XMLHttpRequest on
                     var ipButton = ipButtons[i];
                     ipButton.addEventListener('click', function () {
-                        var jsonIconList = ipNewOptions.jsonIconList;
                         var jsonUrl = ipNewOptions.jsonUrl;
                         var inputElement = this.dataset.iconpickerInput;
                         var previewElement = this.dataset.iconpickerPreview;
@@ -107,12 +105,12 @@ var IconPicker = {
                             borderRadius = ipDefaultOptions.borderRadius;
                         }
 
-                       // check the json url and json icon list on
-                        if ( ! jsonUrl && ! jsonIconList) {
-                            ipConsoleError('You have to set the path of IconPicker JSON file to "jsonUrl" option or init the plugin with the appropriate "jsonIconList"');
+                        // check the json url on
+                        if (!jsonUrl) {
+                            ipConsoleError('You have to set the path of IconPicker JSON file to "jsonUrl" option. \n\nVisit to learn how: ' + ipGithubUrl);
                             return false;
                         }
-                        // check the json url and json icon list off
+                        // check the json url off
 
                         // check the input on
                         var checkInput = document.querySelectorAll(inputElement);
@@ -135,11 +133,7 @@ var IconPicker = {
                         }
                         // check the callback off
 
-                        if(jsonIconList) {
-                            processIconListSetting(jsonIconList, showAllButton, cancelButton, searchPlaceholder, borderRadius, inputElement, previewElement, theCallback);
-                        } else {
-                            getIconListXmlHttpRequest(jsonUrl, showAllButton, cancelButton, searchPlaceholder, borderRadius, inputElement, previewElement, theCallback);
-                        }
+                        getIconListXmlHttpRequest(jsonUrl, showAllButton, cancelButton, searchPlaceholder, borderRadius, inputElement, previewElement, theCallback);
 
                     });
                     // IconPicker: Button Listeners -> Send XMLHttpRequest off
@@ -195,20 +189,6 @@ var IconPicker = {
             }
         }
         // IconPicker: Get Library from JSON and AppendTo Body off
-
-
-        // IconPicker: Process the already set iconlist & AppendTo Body on
-        var processIconListSetting = function (jsonIconList, buttonShowAll, buttonCancel, searchPlaceholder, borderRadius, inputElement, previewElement, theCallback) {
-
-            // modal element
-            var ipElement = document.getElementById('IconPickerModal');
-
-            // if modal element doesn't exist on document send XMLHttpRequest
-            if ( ! ipElement) {
-                appendIconListToBody(data, buttonShowAll, buttonCancel, searchPlaceholder, borderRadius, inputElement, previewElement, theCallback);
-            }
-        }
-        // IconPicker: Process the already set iconlist & AppendTo Body on
 
 
         // IconPicker: Append Library to Body on

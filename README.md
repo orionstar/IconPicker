@@ -31,15 +31,17 @@ yarn add @furcan/iconpicker
 #### 1- CSS
 
 ```html
-<link rel="stylesheet" href="dist/fontawesome-5.11.2/css/all.min.css" />
 
-<link rel="stylesheet" href="dist/iconpicker-1.5.0.css" />
+<link rel="stylesheet" href="dist/fontawesome-5.11.2/css/all.min.css"/>
+
+<link rel="stylesheet" href="dist/iconpicker-1.6.0.css"/>
 ```
 
 #### 2- JavaScript
 
 ```html
-<script src="dist/iconpicker-1.5.0.js"></script>
+
+<script src="dist/iconpicker-1.6.0.js"></script>
 ```
 
 #### 3- HTML
